@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1"></meta>
+<title>Detalle de Platos Elegido</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css"></link>
+
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" th:src="@{/js/carta.js}"></script>
+
+
+
+</head>
+<body>
+	<div th:replace="fragments/header :: header"></div>
+	<div class="container">
+		<form th:action="@{/detalleplatoreserva/registrar}" method="post" th:object="${detalleplatoreserva}">
+			<div class="form-group">
+				<label for="Iddetalleplatoreserva">ID:</label> <input type="text"
+					class="form-control" th:field="*{Iddetalleplatoreserva}"></input>
+
+
+				<label for="reserva" class=" col-sm-2 col-form-label">ID RESERVA: </label>
+						<input type="text" class="form-control" th:field="*{reserva.idReserva}"></input>
+						
+				<label for="platopersonalizado" class=" col-sm-2 col-form-label">ID PLATO PERSONALIZADO: </label>
+						<input type="text" class="form-control" th:field="*{platopersonalizado.idPlatoPersonalizado}"></input>
+
+
+				<label for="precioplato" class=" col-sm-2 col-form-label">PRECIO: </label>
+						<input type="text" class="form-control" th:field="*{precioplato}"></input>
+
+
+
+
+
+
+
+
+
+				<div class="form-group">
+					<label for="fecha">Fecha:</label> 
+					<input type="date" th:field="*{fechaCarta}" class="form-control" id="fechaCarta"></input>
+					<div class="alert alert-danger"
+						th:if="${#fields.hasErrors('fechaCarta')}" th:errors="*{fechaCarta}"></div>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-primary">Aceptar</button>
+			<a href="/carta/listar" class="btn btn-danger">Cancelar</a>
+
+		</form>
+	</div>
+	<div th:replace="fragments/footer :: footer"></div>
+
+</body>
+</html>
