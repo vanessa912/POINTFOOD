@@ -13,5 +13,5 @@ import pe.edu.upc.spring.model.Cliente;
 public interface IClienteRepository extends JpaRepository <Cliente, Integer>{
 	
   @Query("from Cliente c where c.nombreCliente like %:nombreCliente%")
-  List<Cliente> buscarNombre(@Param ("nombreCliente") String nombreCliente);
+  List<Cliente> buscarNombreCliente(@Param ("nombreCliente") String nombreCliente);
 }
