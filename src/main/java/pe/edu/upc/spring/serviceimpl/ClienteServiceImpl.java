@@ -62,10 +62,10 @@ public class ClienteServiceImpl implements IClienteService {
 	}
 
 	@Override
-	@Transactional(readOnly = true)
-	public List<Cliente> buscarNombre(String nombreCliente) {
+	@Transactional
+	public List<Cliente> buscarNombreCliente(String nombreCliente) {
 		
-		return dCliente.buscarNombre(nombreCliente);
+		return dCliente.buscarNombreCliente(nombreCliente);
 	}
 
 }

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 
@@ -12,6 +13,7 @@ import pe.edu.upc.spring.model.Mesa;
 import pe.edu.upc.spring.repository.IMesaRepository;
 import pe.edu.upc.spring.service.IMesaService;
 
+@Service
 public class MesaServiceImpl implements IMesaService {
 	@Autowired
 	private IMesaRepository dMesa;
