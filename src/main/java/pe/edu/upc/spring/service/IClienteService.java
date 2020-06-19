@@ -11,6 +11,6 @@ public interface IClienteService {
 	public void eliminar(int idCliente);
 	public Optional<Cliente> listarId(int idCliente);
 	List<Cliente> listar();
-	List<Cliente> buscarNombre(String nombreCliente);
+	List<Cliente> buscarNombreCliente(String nombreCliente);
 
 }
